@@ -6,5 +6,8 @@
 ## SetUp
 #### just enter the string and wait for the encrypted string at the interface.
 
-# This is still incomplete but by night i plan to push in the complete code. Hopefully and would update the README file
+# Technologies
+##### Mostly javascript
+## It work to quite an extent independently but messes up in passing parameters from jQury section and stops working. would fix if get time
+###### copyright @ epicodus.
 

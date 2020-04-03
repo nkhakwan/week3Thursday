@@ -1,5 +1,9 @@
-var inputString = "what ever it is or not"
-var inputStringSplitted = inputString.split("");
+var newInputString = "";
+var mainFunction = function(inputString){
+newInputString = inputString;
+}
+//  NenputString = " what is thig goijg oon";
+var inputStringSplitted = newInputString.split("");
 var newString =[];
 var field = 0;
 inputStringSplitted.forEach(function(eachLetter){
@@ -18,16 +22,48 @@ var fillEmptySpaces = function(missingSpaces){
 }// end of the function
 fillEmptySpaces(missingSpaces);
 var anotherNewString = [];
-for (var i= 0; i<newString.length; i=i+6){
-  var j = 0;
-  anotherNewString[j] = newSting[i];
-  j = j +=1;
+
+
+
+/*for (var i= 0; i<(newString.length/6); i=i+1){
+  for (var j=0; j<6; j = j+1){
+    if (i === 0 && j === 0){
+      anotherNewString[0] = newString[0];
+    } else {
+   anotherNewString[j+(6*i)] = newString[(j+i+3)];
+      }
+  } // inner for
+} //outer for*/
+
+
+
+for (var i= 0; i<(newString.length); i=i+1){
+  var j = i+1;
+      anotherNewString[i] = newString[newString.length-j];
+    
+} //outer for
+
+
+var finalString = "";
+
+var secondMainFunction = function(){
+  finalString = anotherNewString.join(" ");
+  return finalString;
 }
 
-for (var i= 1; i<newString.length; i=i+1){
-  for (var j=1; j<6; j = j+1){
-    anotherNewString[j] = NewString[J+6];
 
-  }
+
+$(document).ready(function() {
+  $("form#inputAndOutput").submit(function(event){
+     //alert("we are at the beginning of another block");
+     event.preventDefault();
+     var inputString = $("#yourString").val();
+     //console.log(yourString);  // for debugging
+     mainFunction(inputString); // try this one.
+     var final = secondMainFunction;
+     //var result = stateMent(courseType, highSchool, javaScript, engineeringDegree, interest, aptitude);
+     $("#output").text(final);
+     });
+ });
   
-}
+ 
